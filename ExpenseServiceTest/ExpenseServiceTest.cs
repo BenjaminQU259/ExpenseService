@@ -59,9 +59,9 @@ namespace Expense.Service.Test
       // given
       var project = new Project(ProjectType.UNEXPECTED_PROJECT_TYPE, "Invalid project");
       // when
-      var action = new Action(() => ExpenseService.GetExpenseCodeByProjectTypeAndName(project));
+
       // then
-      Assert.Throws<UnexpectedProjectTypeException>(action);
+      Assert.Throws<UnexpectedProjectTypeException>(() => ExpenseService.GetExpenseCodeByProjectTypeAndName(project));
     }
   }
 }
